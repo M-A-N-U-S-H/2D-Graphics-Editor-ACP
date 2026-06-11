@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build graphics_editor",
+      "type": "shell",
+      "command": "C:/Users/manus/AppData/Local/Microsoft/WinGet/Packages/BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/mingw64/bin/gcc.exe",
+      "args": [
+        "-std=c99",
+        "-Wall",
+        "-Wextra",
+        "-O2",
+        "-g",
+        "${workspaceFolder}/graphics_editor.c",
+        "-o",
+        "${workspaceFolder}/graphics_editor.exe",
+        "-lm"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$gcc",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Run graphics_editor",
+      "type": "shell",
+      "command": "${workspaceFolder}/graphics_editor.exe",
+      "dependsOn": "Build graphics_editor",
+      "group": "test",
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    }
+  ]
+}
